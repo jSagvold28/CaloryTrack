@@ -9,13 +9,13 @@ local function logFood()
     io.write("Enter the amount of calories that that food had: ")
     local calories = io.read()
 
-    calorieCount = calorieCount + tonumber(calories)
+    -- calorieCount = calorieCount + tonumber(calories)
 
     -- Print the results
-
+    print("")
     print("Food consumed ".. food)
     print("Quantity of food: ".. Quantity)
-    print("Total calories consumed: " .. calorieCount)
+    print("Total calories consumed: " .. calories)
 
 end
 
@@ -31,8 +31,8 @@ local function resetCalorieCount()
 end
 
 
-local function fetchTotalCalories( ... )
-    -- body
+local function fetchTotalCalories()
+    print("Hello, world")
 end
 
 
@@ -43,7 +43,7 @@ while true do
     if input == "log" then
         logFood()
 
-    elseif input == "" then
-
+    elseif input == "total calories" then
+fetchTotalCalories()
     end
 end
