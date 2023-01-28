@@ -11,12 +11,21 @@ local function logFood()
 
     -- calorieCount = calorieCount + tonumber(calories)
 
-    -- Print the results
+    print("To confrim this is what you inputted: ")
     print("")
     print("Food consumed ".. food)
     print("Quantity of food: ".. Quantity)
     print("Total calories consumed: " .. calories)
 
+    print("Save to confirm to create a text file.")
+
+    if input == "save" then
+        local file = io.open("foodLog.txt", "a")
+        file:write(food .. " " .. Quantity .. " " .. calories .. "\n")
+        file:close()
+        print("Data saved to food_log.txt.")
+
+    end
 end
 
 
@@ -31,8 +40,15 @@ local function resetCalorieCount()
 end
 
 
-local function fetchTotalCalories()
-    print("Hello, world")
+local function logWater()
+
+    io.write("Beverage: ")
+    local Beverage = io.read()
+
+    io.write("How many ounces: ")
+    local ounces = io.read()
+
+
 end
 
 
@@ -43,7 +59,11 @@ while true do
     if input == "log" then
         logFood()
 
-    elseif input == "total calories" then
-fetchTotalCalories()
+    elseif input == "water" then
+        logWater()
+
+    elseif input == "" then
+        
+
     end
 end
