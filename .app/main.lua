@@ -41,8 +41,6 @@ local function logFood()
 end
 
 
-resetWaterCount()
-
 local function logWater()
     io.write("Beverage: ")
     local Beverage = io.read()
