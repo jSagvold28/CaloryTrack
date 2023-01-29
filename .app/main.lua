@@ -143,6 +143,52 @@ local function fetchTotalWater()
     print(totalWaterCount)
 end
 
+local function logSleep()
+
+    io.write("Duration of Sleep: ")
+    local sleep = io.read()
+
+    io.write("Quality of Sleep: ")
+    local qualityOfSleep = io.read()
+
+    io.write("Any wakeups: ")
+    local wakeups = io.read()
+
+    io.write("Trouble sleeping: ")
+    local troubleSleeping = io.read()
+
+    io.write("Bed time: ")
+    local bedTime = io.read()
+
+    io.write("Wakeup time: ")
+    local wakeupTime = io.read()
+
+    local input = io.read()
+
+    if input == "save" then
+
+        local file = io.open("sleep from" .. os.date("%m_%d_%y"))
+
+        if not file then
+
+            print("Error opening file")
+
+            return
+        end
+
+        file:write(sleep)
+        file:write(qualityOfSleep)
+        file:write(wakeups)
+        file:write(troubleSleeping)
+        file:write(bedTime)
+        file:write(wakeupTime)
+
+        file:close()
+        print("Data saved to file successfully")
+    end
+end
+
+
 
 
 while true do
@@ -160,14 +206,9 @@ while true do
     elseif input == "workout" then
         logWorkout()
 
-    -- elseif input == "total calories" then
-    --     fetchTotalCalories()
 
-    -- elseif input == "total carbs" then
-    --     fetchTotalCarbs()
-
-    -- elseif input == "total water" then
-    --     fetchTotalWater()
+    elseif input == "sleep" then
+        logSleep()
 
     end
 end
