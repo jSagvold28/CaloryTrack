@@ -29,10 +29,12 @@ local function logFood()
         file:close()
         
         print("Food log created!")
+        print("")
 
     else 
         print("File not created.")
         print("Error saving the food log file, please try again!")
+        print("")
 
 
     end
@@ -87,8 +89,10 @@ local function logWater()
         file:close()
 
         print("Water log created!")
+        print("")
     else 
         print("Error saving the water log file please try again")
+        print("")
     end
 end
 
@@ -128,6 +132,7 @@ local function logWorkout()
 
     print("File has been generated! Check the explorer on the left-hand side.")
     print("If you do not see the .txt file, there was an error that occured.")
+    print("")
 end
 
 
@@ -172,6 +177,7 @@ local function logSleep()
         if not file then
 
             print("Error opening file")
+            print("")
 
             return
         end
@@ -197,6 +203,7 @@ local function fetchApplicaitonCommands()
     print("'liquid' - logs a liquid item")
     print("'sleep' - logs a night of sleep")
     print("'comands' - shows all CaloryTrack commands")
+    print("")
 end
 
 
