@@ -141,7 +141,7 @@ end
 
 local function fetchTotalWater()
     print(totalWaterCount)
-end
+end 
 
 local function logSleep()
 
@@ -176,7 +176,7 @@ local function logSleep()
             return
         end
 
-        file:write(sleep)
+        file:write(sleep, "n")
         file:write(qualityOfSleep)
         file:write(wakeups)
         file:write(troubleSleeping)
@@ -189,18 +189,33 @@ local function logSleep()
 end
 
 
+local function fetchApplicaitonCommands()
+
+    print("CaloryTrack commands: ")
+    print("")
+    print("'food' - logs a food item")
+    print("'liquid' - logs a liquid item")
+    print("'sleep' - logs a night of sleep")
+    print("'comands' - shows all CaloryTrack commands")
+end
 
 
 while true do
 
     print("CaloryTrack commands: ")
+    print("")
+    print("'food' - logs a food item")
+    print("'liquid' - logs a liquid item")
+    print("'sleep' - logs a night of sleep")
+    print("'comands' - shows all CaloryTrack commands")
+    print("")
 
     local input = io.read()
 
     if input == "food" then
         logFood()
 
-    elseif input == "water" then
+    elseif input == "liquid" then
         logWater()
 
     elseif input == "workout" then
@@ -209,6 +224,9 @@ while true do
 
     elseif input == "sleep" then
         logSleep()
+
+    elseif input == "commands" then
+        fetchApplicaitonCommands()
 
     end
 end
