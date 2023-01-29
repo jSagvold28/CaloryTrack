@@ -15,4 +15,4 @@ liquid - logs a liquid item
 sleep - logs a night of sleep
 commands - shows all CaloryTrack commands
 
-### [may add more commmands in the feature, this was updated on 1.29.23 at 2:48pm]
+#### [may add more commmands in the feature, this was updated on 1.29.23 at 2:48pm]
