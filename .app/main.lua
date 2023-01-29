@@ -41,34 +41,6 @@ local function logFood()
 end
 
 
-local function resetCalorieCount()
-
-    local currentTime = os.date("*t")
-
-    if currentTime.hour == 0 and currentTime.min == 0 and currentTime.sec == 0 then
-        calorieCount = 0
-
-    end
-end
-resetCalorieCount()
-
-local function resetCarbCount()
-    local currentTime = os.date("*t")
-
-    if currentTime.hour == 0 and currentTime.min == 0 and currentTime.sec == 0 then
-        carbCount = 0
-    end
-end
-resetCarbCount()
-
-local function resetWaterCount()
-
-    local currentTime = os.date("*t")
-
-    if currentTime.hour == 0 and currentTime.min == 0 and currentTime.sec == 0 then
-        totalWaterCount = 0
-    end
-end
 resetWaterCount()
 
 local function logWater()
@@ -237,3 +209,5 @@ while true do
 
     end
 end
+
+
