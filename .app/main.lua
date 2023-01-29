@@ -31,6 +31,7 @@ local function logFood()
         print("Food log created!")
 
     else 
+        print("File not created.")
         print("Error saving the food log file, please try again!")
 
 
@@ -47,6 +48,26 @@ local function resetCalorieCount()
 
     end
 end
+resetCalorieCount()
+
+local function resetCarbCount()
+    local currentTime = os.date("*t")
+
+    if currentTime.hour == 0 and currentTime.min == 0 and currentTime.sec == 0 then
+        carbCount = 0
+    end
+end
+resetCarbCount()
+
+local function resetWaterCount()
+
+    local currentTime = os.date("*t")
+
+    if currentTime.hour == 0 and currentTime.min == 0 and currentTime.sec == 0 then
+        totalWaterCount = 0
+    end
+end
+resetWaterCount()
 
 local function logWater()
     io.write("Beverage: ")
@@ -88,6 +109,10 @@ local function logWorkout()
     io.write("Total steps: ")
     local steps = io.read()
 
+    io.write("In the zone: ")
+    local zone = io.read()
+
+
     print("Generating workout report...")
     os.execute("sleep 1.11555")
 
@@ -97,6 +122,7 @@ local function logWorkout()
     file:write(Duration .. "\n")
     file:write(burt .. "\n")
     file:write(steps .. "\n")
+    file:write(zone .. "\n")
 
     file:close()
 
@@ -105,7 +131,23 @@ local function logWorkout()
 end
 
 
+local function fetchTotalCalories()
+    print(totalCalories)
+end
+
+local function fetchTotalCarbs()
+    print(carbCount)
+end
+
+local function fetchTotalWater()
+    print(totalWaterCount)
+end
+
+
+
 while true do
+
+    print("CaloryTrack commands: ")
 
     local input = io.read()
 
@@ -118,8 +160,14 @@ while true do
     elseif input == "workout" then
         logWorkout()
 
-    elseif input == "" then
-        -- funcName
+    -- elseif input == "total calories" then
+    --     fetchTotalCalories()
+
+    -- elseif input == "total carbs" then
+    --     fetchTotalCarbs()
+
+    -- elseif input == "total water" then
+    --     fetchTotalWater()
 
     end
 end
