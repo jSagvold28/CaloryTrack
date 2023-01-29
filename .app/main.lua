@@ -241,3 +241,4 @@ local function resetWaterCount()
         totalWaterCount = 0
     end
 end
+resetWaterCount()
