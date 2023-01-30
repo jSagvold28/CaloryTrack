@@ -1,7 +1,7 @@
 local function signup()
 
     print("Name: ")
-    local userName« = io.read()
+    local userName = io.read()
 
     print("User Name:")
     local displayName = io.read()
@@ -18,17 +18,31 @@ local function signup()
     print("Weight: ")
     local userWeight = io.read()
 
+    print("")
+    print("Non-essental information, you can skip")
+    print("")
+
+
     print("Daily liquid intake: ")
     local dailyLiquidIntake = io.read()
 
     print("Daily water intake: ")
     local dailyWaterIntake = io.read()
 
+    print("Total active minuites (per day): ")
+    local activeMoveMinutesPD = io.read()
+
+    print("Total steps per day: ")
+    local totalStepsPD = io.read()
+
     local file = io.open("userDetails.txt", "a")
+
+    local userData = userName .. displayName .. userAge .. userWeight .. userWeight
+    local displayData = userName .. displayName .. userAge
+    local privateData = password .. userWeight .. userAge
     
-    local userData = userName .. "," displayName ..  "," .. userAge .. "," .. userHeight .. "," .. userWeight .. "," .. dailyLiquidIntake .. "," .. dailyWaterIntake
     
-    file:write(userData .. "\n")
+    file:write(displayData .. "\n")
     file:close()
 
 end
@@ -46,3 +60,25 @@ local function fetchUserDetails()
 
 end
 fetchUserDetails()
+
+local function deleteUserLog()
+
+    local input = io.read()
+
+    if input == "!del" then
+        local files = io.popen("ls *.txt") 
+        local fileList = files:read("*all") 
+
+        files:close()
+        
+        for file in string.gmatch(fileList, "%S+") do 
+
+            os.remove(file) -- Use the os.remove() function to delete each file
+
+        end
+
+        print("User data files, have been kicked off the server.")
+    end
+end
+deleteUserLog()
+
