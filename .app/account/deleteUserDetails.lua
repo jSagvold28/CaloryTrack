@@ -21,3 +21,17 @@ local function deleteUserLog()
     end
 end
 deleteUserLog()
+
+
+--[[
+
+    REMOVING USERDATA.txt FILE:
+
+
+    This file checks for a userDetails.txt file in the file explorer.
+
+    If this file does find one, it will remove it.
+
+    If there is no such thing called userDetails.txt there will be no change. There may of be an error that will appear.
+
+]]
