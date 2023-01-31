@@ -1,7 +1,7 @@
 local function signup()
 
     print("Name: ")
-    local userName = io.read()
+    local firstName = io.read()
 
     print("User Name:")
     local displayName = io.read()
@@ -37,18 +37,35 @@ local function signup()
 
     local file = io.open("userDetails.txt", "a")
 
-    local userData = userName .. displayName .. userAge .. userWeight .. userWeight
+    local userData = firstName .. displayName .. userAge .. userWeight .. userWeight
     local displayData = userName .. displayName .. userAge
     local privateData = password .. userWeight .. userAge
     
     
     file:write(displayData .. "\n")
+    file:write(userData)
     file:close()
 
+    print("")
+    print("Is this the information that you want to use for your account?")
+    print("Type 'yes' if you would like to create your account with the provided data.")
+    print("")
+    
+    print(userData)
+
+    local input = io.read()
+
+    if input == "yes" then
+
+        print("Signup was completed! Welcome to the CaloryTrack team!")
+        
+    else
+        print("Ok, we wont")
+
+    end
 end
 signup()
 
-print("Sign up was completed!")
 
 
 local function fetchUserDetails()
