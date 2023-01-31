@@ -126,3 +126,4 @@ local function planMealWeek()
     io.write("Snack: ")
     local Snack = io.read()
 end
+ 
