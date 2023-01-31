@@ -50,7 +50,7 @@ local function signup()
     print("Is this the information that you want to use for your account?")
     print("Type 'yes' if you would like to create your account with the provided data.")
     print("")
-    
+        
     print(userData)
 
     local input = io.read()
